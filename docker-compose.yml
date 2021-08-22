@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   tws:
     build: .
@@ -9,19 +9,19 @@ services:
       - ./ib/IBController.ini:/root/IBController/IBController.ini
       - ./ib/jts.ini:/root/Jts/jts.ini
     environment:
-      - TZ=America/Chicago
+      - TZ=America/New_York
       # Variables pulled from /IBController/IBControllerGatewayStart.sh
-      - VNC_PASSWORD=1234 # CHANGEME
+      - VNC_PASSWORD=${VNC_PASSWORD} # CHANGEME
       - TWS_MAJOR_VRSN=974
       - IBC_INI=/root/IBController/IBController.ini
       - IBC_PATH=/opt/IBController
       - TWS_PATH=/root/Jts
       - TWS_CONFIG_PATH=/root/Jts
       - LOG_PATH=/opt/IBController/Logs
-      - JAVA_PATH=/opt/i4j_jres/1.8.0_152/bin # JRE is bundled starting with TWS 952 
-      - TRADING_MODE=paper # either paper or live
-      - TWSUSERID=fdemo # IB account
-      - TWSPASSWORD=demouser # IB account password
+      - JAVA_PATH=/opt/i4j_jres/1.8.0_152/bin # JRE is bundled starting with TWS 952
+      - TRADING_MODE=live # either paper or live
+      - TWSUSERID=${IBKR_USER} # IB account
+      - TWSPASSWORD=${IBKR_PASS} # IB account password
       - FIXUSERID=
       - FIXPASSWORD=
       - APP=GATEWAY
