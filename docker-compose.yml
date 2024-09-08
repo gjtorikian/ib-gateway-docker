@@ -29,7 +29,7 @@ services:
       TIME_ZONE: ${TIME_ZONE:-America/New_York}
       TZ: ${TIME_ZONE:-America/New_York}
       CUSTOM_CONFIG: ${CUSTOM_CONFIG:-NO}
-      JAVA_HEAP_SIZE: ${JAVA_HEAP_SIZE:-}
+      JAVA_HEAP_SIZE: ${JAVA_HEAP_SIZE:-1024}
       SSH_TUNNEL: ${SSH_TUNNEL:-}
       SSH_OPTIONS: ${SSH_OPTIONS:-}
       SSH_ALIVE_INTERVAL: ${SSH_ALIVE_INTERVAL:-}
