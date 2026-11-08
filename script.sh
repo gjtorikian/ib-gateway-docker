@@ -2,9 +2,9 @@
 
 CONTAINER_ID=$(docker ps | grep -Po "(^\S+)(?=\s+ib)")
 
-if [ -n "$var" ]; then
+if [ -n "$CONTAINER_ID" ]; then
   echo "Restarting $CONTAINER_ID"
-  docker rm $CONTAINER_ID --force
+  docker rm "$CONTAINER_ID" --force
 fi
 
 docker-compose up
