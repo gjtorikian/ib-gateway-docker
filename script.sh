@@ -7,7 +7,7 @@ if [ -n "$CONTAINER_ID" ]; then
   docker rm "$CONTAINER_ID" --force
 fi
 
-docker-compose up
+docker compose up
 
 pm2 restart orderer
 
